@@ -1,0 +1,152 @@
+<mat-toolbar>
+  <mat-toolbar-row>
+    <img src="assets/logo.png" height="50px" width="85px"/><span class="big store-name">Twój Sklep</span>
+    <span class="space"></span>
+    <form class="big search-form" >
+      <button mat-raised-button [matMenuTriggerFor]="category">Wybierz kategorię <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <span class="small-space"></span>
+      <mat-form-field class="example-full-width">
+        <input type="text" aria-label="Wyszukaj" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-placeholder class="placeholder" style="font-size:16px">Wyszukaj produkt</mat-placeholder>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-icon matSuffix class="search">search</mat-icon>
+      </mat-form-field>
+    </form>
+    <span class="example-spacer"></span>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="Ulubione">favorite</mat-icon>
+    <mat-icon class="example-icon" aria-hidden="false" aria-label="TwojKoszyk">local_grocery_store</mat-icon>
+    <button mat-raised-button class="example-icon" color="primary">Zaloguj się</button>
+  </mat-toolbar-row>
+  <!-- For small screens -->
+  <mat-toolbar-row class="small">
+    <form class="search-form">
+      <button mat-icon-button [matMenuTriggerFor]="category" aria-label="Example icon-button with a menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+      <span class="small-space"></span>
+      <mat-form-field class="example-full-width">
+        <input type="text" class="input-small" aria-label="Wyszukaj" matInput [formControl]="myControl" [matAutocomplete]="auto">
+        <mat-placeholder class="placeholder" style="font-size:16px">Wyszukaj produkt</mat-placeholder>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+        <mat-icon matSuffix class="search">search</mat-icon>
+      </mat-form-field>
+    </form>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+
+<!-- Options for  "Wybierz kategorię" -->
+
+<mat-menu #category="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="furniture">Meble</button>
+  <button mat-menu-item [matMenuTriggerFor]="lights">Oświetlenie</button>
+  <button mat-menu-item [matMenuTriggerFor]="decorations">Dekoracje</button>
+</mat-menu>
+
+<mat-menu #furniture="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="desks">Biurka</button>
+  <button mat-menu-item>Etażerki</button>
+  <button mat-menu-item [matMenuTriggerFor]="armchairs">Fotele</button>
+  <button mat-menu-item [matMenuTriggerFor]="couches">Kanapy</button>
+  <button mat-menu-item>Komody</button>
+  <button mat-menu-item>Krzesła</button>
+  <button mat-menu-item [matMenuTriggerFor]="beds">Łóżka</button>
+  <button mat-menu-item="shelfes">Półki</button>
+  <button mat-menu-item [matMenuTriggerFor]="sofas">Sofy</button>
+  <button mat-menu-item [matMenuTriggerFor]="tables">Stoły</button>
+  <button mat-menu-item [matMenuTriggerFor]="kitchenUnits">Szafki kuchenne</button>
+  <button mat-menu-item [matMenuTriggerFor]="wardrobes">Szafy</button>
+  <button mat-menu-item>Toaletki</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #lights="matMenu">
+  <button mat-menu-item>Lampki</button>
+  <button mat-menu-item>Lampy stojące</button>
+  <button mat-menu-item>Lampy ścienne</button>
+  <button mat-menu-item>Oświetlenie zewnętrzne</button>
+  <button mat-menu-item>Żyrandole</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #decorations="matMenu">
+  <button mat-menu-item>Doniczki</button>
+  <button mat-menu-item>Firanki</button>
+  <button mat-menu-item [matMenuTriggerFor]="mirrors">Lustra</button>
+  <button mat-menu-item>Ozdoby</button>
+  <button mat-menu-item>Zasłony</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #mirrors="matMenu">
+  <button mat-menu-item>Naścienne</button>
+  <button mat-menu-item>Łazienkowe</button>
+  <button mat-menu-item>Stojące</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #desks="matMenu">
+  <button mat-menu-item>Do gabinetu</button>
+  <button mat-menu-item>Dziecięce</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #armchairs="matMenu">
+  <button mat-menu-item>Do salonu</button>
+  <button mat-menu-item>Komputerowe</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #couches="matMenu">
+  <button mat-menu-item>Jednoosobowe</button>
+  <button mat-menu-item>Dwuosobowe</button>
+  <button mat-menu-item>Narożniki</button>
+  <button mat-menu-item>Nierozkładane</button>
+  <button mat-menu-item>Rozkładane</button>
+  <button mat-menu-item>Trzyosobowe i większe</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #beds="matMenu">
+  <button mat-menu-item>Dwuosobowe</button>
+  <button mat-menu-item>Dziecięce</button>
+  <button mat-menu-item>Jednoosobowe</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #sofas="matMenu">
+    <button mat-menu-item>Jednoosobowe</button>
+    <button mat-menu-item>Dwuosobowe</button>
+    <button mat-menu-item>Trzyosobowe i większe</button>
+    <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #tables="matMenu">
+  <button mat-menu-item>Do jadalni</button>
+  <button mat-menu-item>Kawowe</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #kitchenUnits="matMenu">
+  <button mat-menu-item>Blaty</button>
+  <button mat-menu-item>Naścienne</button>
+  <button mat-menu-item>Stojące</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
+
+<mat-menu #wardrobes="matMenu">
+  <button mat-menu-item>Dziecięce</button>
+  <button mat-menu-item>Przesuwne</button>
+  <button mat-menu-item>Tradycyjne</button>
+  <button mat-menu-item>Wbudowane</button>
+  <button mat-menu-item>Inne</button>
+</mat-menu>
