@@ -13,7 +13,7 @@ export class SingleCardComponent implements OnInit {
   constructor(private dataService: DataService) { }
 
   ngOnInit() {
-   
+   console.log(this.product)
   }
 
 }

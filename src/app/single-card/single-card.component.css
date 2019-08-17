@@ -1,10 +1,18 @@
 .single-card {
-    max-width: 400px;
-    max-height: 500px;
     margin: 0 5px;
 } 
 
 img{
-    max-height:250px;
+    max-height:230px;
+    max-width: 300px;
     overflow: hidden;
+    min-height: 230px;
+}
+
+.space{
+    flex: 1 1 auto;
+}
+
+.shop{
+    float:right;
 }

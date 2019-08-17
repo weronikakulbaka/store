@@ -14,3 +14,9 @@ mat-card{
 .products-card{
     display: inline-flex;
 }
+
+@media (max-width: 450px){
+    .products-card{
+        display: block;
+    }
+}
