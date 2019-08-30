@@ -49,6 +49,7 @@
 <mat-menu #category="matMenu">
   <button mat-menu-item [matMenuTriggerFor]="furniture">Meble</button>
   <button mat-menu-item [matMenuTriggerFor]="lights">Oświetlenie</button>
+  <button mat-menu-item [matMenuTriggerFor]="mirrors">Lustra</button>
   <button mat-menu-item [matMenuTriggerFor]="decorations">Dekoracje</button>
 </mat-menu>
 
@@ -81,7 +82,6 @@
 <mat-menu #decorations="matMenu">
   <button mat-menu-item>Doniczki</button>
   <button mat-menu-item>Firanki</button>
-  <button mat-menu-item [matMenuTriggerFor]="mirrors">Lustra</button>
   <button mat-menu-item>Ozdoby</button>
   <button mat-menu-item>Zasłony</button>
   <button mat-menu-item>Inne</button>
@@ -102,7 +102,7 @@
 
 <mat-menu #armchairs="matMenu">
   <button mat-menu-item>Do salonu</button>
-  <button mat-menu-item>Komputerowe</button>
+  <button mat-menu-item>Obrotowe</button>
   <button mat-menu-item>Inne</button>
 </mat-menu>
 
@@ -138,9 +138,7 @@
 
 <mat-menu #kitchenUnits="matMenu">
   <button mat-menu-item>Blaty</button>
-  <button mat-menu-item>Naścienne</button>
-  <button mat-menu-item>Stojące</button>
-  <button mat-menu-item>Inne</button>
+  <button mat-menu-item>Szafki</button>
 </mat-menu>
 
 <mat-menu #wardrobes="matMenu">

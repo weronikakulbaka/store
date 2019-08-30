@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DataService } from '../data.service';
+
 
 @Component({
   selector: 'app-single-card',
@@ -10,10 +10,10 @@ export class SingleCardComponent implements OnInit {
 
   @Input() product;
 
-  constructor(private dataService: DataService) { }
+  constructor() { }
 
   ngOnInit() {
-   
+   console.log(this.product)
   }
 
 }

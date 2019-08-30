@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import {
+  Component,
+  OnInit
+} from '@angular/core';
+import { ProductService } from '../shared/product.service';
+import { Product } from '../shared/product';
+
 
 @Component({
   selector: 'app-recommended-card',
@@ -9,15 +14,13 @@ import { DataService } from '../data.service';
 export class RecommendedCardComponent implements OnInit {
 
   products;
-  product;
+  sales;
+  productsOnSale = [];
 
-  constructor(private dataService: DataService) { }
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.products = this.dataService.getProducts();
-    this.products.subscribe( products => {
-      this.products = products;
-    });
+    this.productService.getProducts().then(res => this.products = res as Product[]);
   }
 
 }
