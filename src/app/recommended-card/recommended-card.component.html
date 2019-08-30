@@ -3,6 +3,6 @@
 <mat-card>Okazje cenowe</mat-card>
 <div class="space"></div>
 <div class="products-card">
-    <app-single-card *ngFor="let product of productsOnSale" [product]="product" ></app-single-card>
+    <app-single-card *ngFor="let product of this.products" [product]="product" ></app-single-card>  
 </div>
 </div>

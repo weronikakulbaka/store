@@ -2,9 +2,9 @@ import {
   Component,
   OnInit
 } from '@angular/core';
-import {
-  DataService
-} from '../data.service';
+import { ProductService } from '../shared/product.service';
+import { Product } from '../shared/product';
+
 
 @Component({
   selector: 'app-recommended-card',
@@ -16,29 +16,11 @@ export class RecommendedCardComponent implements OnInit {
   products;
   sales;
   productsOnSale = [];
-  product;
 
-  constructor(private dataService: DataService) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.products = this.dataService.getProducts();
-    this.products.subscribe(products => {
-      this.products = products;
-    });
-    this.sales = this.dataService.getSales();
-    this.sales.subscribe(sales => {
-      this.sales = sales;
-    });
-
-    this.products.filter(product => {
-      for (let sale of this.sales) {
-        if (sale.productId === product.id) {
-          console.log(sale);
-          this.productsOnSale.push(product);
-        }
-      }
-    });
-
+    this.productService.getProducts().then(res => this.products = res as Product[]);
   }
 
 }

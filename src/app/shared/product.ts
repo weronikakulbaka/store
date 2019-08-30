@@ -1,14 +1,14 @@
 export interface Product{
-    id: number;
-    name: string;
-    type: ProductType;
-    section: Section;
-    details: Deatils;
-    dateSold: number;
-    description: string;
-    photoUrl: string;
-    price: number;
-    amount: number;
+    ProductID: number;
+    Name: string;
+    Type: ProductType;
+    Section: Section;
+    Details: Deatils;
+    DateSold: number;
+    Description: string;
+    PhotoUrl: string;
+    Price: number;
+    Amount: number;
 }
 
 export enum ProductType{
@@ -59,7 +59,7 @@ export enum Section{
     foldDown,
     threePersonAndMore,
     toDiningRoom,
-    coffeTable,
+    coffeeTable,
     surface,
     kitchenUnit,
     sliding,
