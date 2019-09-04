@@ -1,12 +1,11 @@
 .single-card {
     margin: 0 5px;
+    width: 250px;
+    height: 335px;
 } 
 
 img{
-    max-height:230px;
-    max-width: 300px;
     overflow: hidden;
-    min-height: 230px;
 }
 
 .space{
