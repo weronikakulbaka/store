@@ -1,6 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { Product } from './product';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -11,12 +12,10 @@ export class ProductService {
   ProductData: Product
   list: Product[]
 
-  readonly rootURL = "https://localhost:44328/api"
-
   constructor(private http: HttpClient) { }
 
   getProducts(){
-    return this.http.get(this.rootURL + '/Product').toPromise();
+    return this.http.get(environment.rootURL + '/Product');
   }
 
 }

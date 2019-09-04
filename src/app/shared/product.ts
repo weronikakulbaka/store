@@ -9,6 +9,7 @@ export interface Product{
     PhotoUrl: string;
     Price: number;
     Amount: number;
+    IsOnSale: number;
 }
 
 export enum ProductType{
