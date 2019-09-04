@@ -6,6 +6,7 @@ import { ProductService } from '../shared/product.service';
 import { Product } from '../shared/product';
 
 
+
 @Component({
   selector: 'app-recommended-card',
   templateUrl: './recommended-card.component.html',
@@ -14,13 +15,16 @@ import { Product } from '../shared/product';
 export class RecommendedCardComponent implements OnInit {
 
   products;
-  sales;
   productsOnSale = [];
 
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.productService.getProducts().then(res => this.products = res as Product[]);
+    this.productService.getProducts().subscribe(res => 
+    {
+      this.products = res;
+      this.productsOnSale = this.products.filter(item => item.IsOnSale === 1);
+    });
   }
 
 }

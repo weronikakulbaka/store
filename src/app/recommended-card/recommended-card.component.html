@@ -1,8 +1,8 @@
 <div class="space"></div>
 <div class="container">
-<mat-card>Okazje cenowe</mat-card>
-<div class="space"></div>
-<div class="products-card">
-    <app-single-card *ngFor="let product of this.products" [product]="product" ></app-single-card>  
-</div>
+    <mat-card>Okazje cenowe</mat-card>
+    <div class="space"></div>
+    <div class="products-card">
+        <app-single-card *ngFor="let product of this.productsOnSale" [product]="product" class="single-product" ></app-single-card>  
+    </div>
 </div>
